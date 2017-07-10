@@ -3,8 +3,44 @@ This is Starter Project for Pdfmake with Angular 4 and Angular CLI
 
 PDFMAKE:-  pdfmake is awesome light weight pure Javascript pdf generator https://github.com/bpampuch/pdfmake
 
-In this starter project i have integrated PDFMAKE in Angular 4 + Angular CLI.
+In this starter project i have integrated PDFMAKE in Angular 4 + Angular CLI without adding js file in the `Index.html` or `scripts` array 
 
+## Intergartion.
+1. First Generate angular project using CLI.
+
+1. `npm install pdfmake --save `
+
+1. add your imports in the Component 
+```
+ import * as pdfMake from 'pdfmake/build/pdfmake';
+ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+```
+ 1. add this line in the constructor of your component
+ ```
+ pdfMake.vfs = pdfFonts.pdfMake.vfs;
+```
+## Sample component 
+
+ ``` import { Component } from '@angular/core';
+ import * as pdfMake from 'pdfmake/build/pdfmake';
+ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app works!';
+constructor(){
+     //called first time before the ngOnInit()
+     pdfMake.vfs = pdfFonts.pdfMake.vfs;
+      var dd = { content: 'your pdf data' };
+    pdfMake.createPdf(dd).download();
+  }
+
+}
+```
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
