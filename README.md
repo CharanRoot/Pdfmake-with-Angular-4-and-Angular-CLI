@@ -1,4 +1,9 @@
-# MyNewapp
+# Starter project for Pdfmake with Angular 4 and Angular CLI
+This is Starter Project for Pdfmake with Angular 4 and Angular CLI
+
+PDFMAKE:-  pdfmake is awesome light weight pure Javascript pdf generator https://github.com/bpampuch/pdfmake
+
+In this starter project i have integrated PDFMAKE in Angular 4 + Angular CLI.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
